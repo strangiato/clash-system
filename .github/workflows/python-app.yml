@@ -31,6 +31,7 @@ jobs:
           # Enable linters
           black: true
           flake8: true
+          auto_fix: true
       # - name: Install dependencies
       #   working-directory: clash_api
       #   run: |
