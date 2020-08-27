@@ -25,8 +25,8 @@ def register_views():
 def handle_marshmallow_error(e):
     """Return json error for marshmallow validation errors.
 
-    This will avoid having to try/catch ValidationErrors in all endpoints, 
-    returning correct JSON response with associated HTTP 400 Status 
+    This will avoid having to try/catch ValidationErrors in all endpoints,
+    returning correct JSON response with associated HTTP 400 Status
     (https://tools.ietf.org/html/rfc7231#section-6.5.1)
     """
     return jsonify(e.messages), 400
