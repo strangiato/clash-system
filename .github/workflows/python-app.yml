@@ -28,7 +28,7 @@ jobs:
       - name: Lint with tox
         working-directory: clash_api
         run: |
-          tox -e lint
+          tox -e lint-fix
       - name: Test with tox
         working-directory: clash_api
         run: |
