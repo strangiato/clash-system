@@ -15,8 +15,7 @@ def cli():
 
 @cli.command("init")
 def init():
-    """Create a new admin user
-    """
+    """Create a new admin user"""
     from clash_api.extensions import db
     from clash_api.models import User
 
