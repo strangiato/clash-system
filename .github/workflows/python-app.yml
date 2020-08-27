@@ -20,19 +20,30 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
-      - name: Install dependencies
-        working-directory: clash_api
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install -e .
-      - name: Lint with tox
-        working-directory: clash_api
+
+      - name: Install Python dependencies
+        run: pip install black flake8
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v1
         with:
           github_token: ${{ secrets.github_token }}
-          auto_fix: ${{ github.event_name == 'pull_request' }}
-        run: |
-          tox -e lint-fix
+          # Enable linters
+          black: true
+          flake8: true
+      # - name: Install dependencies
+      #   working-directory: clash_api
+      #   run: |
+      #     python -m pip install --upgrade pip
+      #     pip install -r requirements.txt
+      #     pip install -e .
+      # - name: Lint with tox
+      #   working-directory: clash_api
+      #   with:
+      #     github_token: ${{ secrets.github_token }}
+      #     auto_fix: ${{ github.event_name == 'pull_request' }}
+      #   run: |
+      #     tox -e lint-fix
 
   build:
     runs-on: ubuntu-latest
