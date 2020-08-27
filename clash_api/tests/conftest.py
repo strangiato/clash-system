@@ -34,7 +34,7 @@ def db(app):
 
 @pytest.fixture
 def admin_user(db):
-    user = User(username="admin", email="admin@admin.com", password="admin")
+    user = User(username='admin', email='admin@admin.com', password='admin')
 
     db.session.add(user)
     db.session.commit()
