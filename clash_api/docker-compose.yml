@@ -1,5 +1,5 @@
 # WARNING: this file is not suitable for production, please use with caution
-version: '3'
+version: "3"
 
 services:
   web:
@@ -11,7 +11,8 @@ services:
     environment:
       - DATABASE_URI=sqlite:////db/clash_api.db
     volumes:
-      - ./clash_api:/code/clash_api
+      - ./clash_api/:/code/clash_api/
       - ./db/:/db/
+      - ./migrations/:/code/migrations/
     ports:
       - "5000:5000"
