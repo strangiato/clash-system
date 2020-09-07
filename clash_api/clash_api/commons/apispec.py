@@ -32,7 +32,8 @@ class FlaskRestfulPlugin(FlaskPlugin):
 
 class APISpecExt:
     """
-    Very simple and small extension to use apispec with this API as a flask extension
+    Very simple and small extension to use apispec 
+    with this API as a flask extension
     """
 
     def __init__(self, app=None, **kwargs):
