@@ -21,7 +21,9 @@ class FlaskRestfulPlugin(FlaskPlugin):
                 endpoint = ept
 
         if not endpoint:
-            raise APISpecError("Could not find endpoint for view {0}".format(view))
+            raise APISpecError(
+                "Could not find endpoint for view {0}".format(view)
+                )
 
         # WARNING: Assume 1 rule per view function for now
         rule = app.url_map._rules_by_endpoint[endpoint][0]
