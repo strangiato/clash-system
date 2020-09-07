@@ -6,10 +6,10 @@ from clash_api.models import User
 from clash_api.app import create_app
 from clash_api.extensions import db as _db
 from pytest_factoryboy import register
-from tests.factories import UserFactory
-
+from tests.factories import UserFactory, ClanFactory
 
 register(UserFactory)
+register(ClanFactory)
 
 
 @pytest.fixture(scope="session")
