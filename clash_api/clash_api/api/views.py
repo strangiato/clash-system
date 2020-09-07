@@ -14,8 +14,8 @@ api = Api(blueprint)
 api.add_resource(UserResource, "/users/<int:user_id>", endpoint="user_by_id")
 api.add_resource(UserList, "/users", endpoint="users")
 
-api.add_resource(UserResource, "/clans/<int:clan_id>", endpoint="clan_by_id")
-api.add_resource(UserList, "/clans", endpoint="clans")
+api.add_resource(ClanResource, "/clans/<int:clan_id>", endpoint="clan_by_id")
+api.add_resource(ClanList, "/clans", endpoint="clans")
 
 
 @blueprint.before_app_first_request
