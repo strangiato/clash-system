@@ -10,10 +10,7 @@ from flask_jwt_extended import (
 
 from clash_api.models import User
 from clash_api.extensions import pwd_context, jwt, apispec
-from clash_api.auth.helpers import (revoke_token, 
-  is_token_revoked, 
-  add_token_to_database
-  )
+from clash_api.auth.helpers import revoke_token, is_token_revoked, add_token_to_database
 
 
 blueprint = Blueprint("auth", __name__, url_prefix="/auth")
