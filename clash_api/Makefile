@@ -12,7 +12,7 @@ run:
 	docker-compose up -d
 
 db-migrate:
-	docker-compose exec web clash_api db migrate
+	docker-compose exec web clash_api db migrate $(ARGS)
 
 db-upgrade:
 	docker-compose exec web clash_api db upgrade
